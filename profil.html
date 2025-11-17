@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | SMA Negeri 8 Jakarta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="beranda">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="gambar-sma/logo-sma8jkt.png" alt="Logo SMAN 8 Jakarta">
+                    <span class="nama-sekolah-header">SMAN 8 Jakarta</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html" class="active">Profil</a></li>
+                    <li><a href="jurusan.html">Jurusan</a></li>
+                    <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="profil-bagian-satu">
+            <div class="container">
+                <h1 class="page-title">Profil Sekolah</h1>
+
+                <div class="profil-layout">
+
+                    <div class="profil-konten">
+
+                        <h2>Sejarah Singkat</h2>
+                        <p>SMA Negeri 8 Jakarta dibuka/ didirikan pada tanggal 1 Agustus 1958 di Taman Slamet Rijadi
+                            Jakarta dengan nama SMA Negeri VIII/ABC dengan Sp. Menteri P.D.K. tanggal 21 Agustus 1958
+                            No. 26/SK/B.111.</p>
+                        <p>Pada bulan Januari 1959 dlakukan pemindahan tempat atau gedung sekolah di SMP Negeri III
+                            Jakarta, Jl. Manggarai Utara IV/6 Jatinegara. Dan pada tanggal 30 Maret 1971 SMA Negeri 8
+                            Jakarta berdiri di Jalan Taman Bukitduri Tebet dan diresmikan oleh Gubernur Ali Sadikin.</p>
+
+                        <h2 style="margin-top: 2rem;">Visi & Misi</h2>
+                        <div class="card-container">
+                            <div class="card" style="width: 100%;">
+                                <h3 style="color: var(--warna-aksen-hijau);">Visi</h3>
+                                <p>"Menjadi lembaga pendidikan terdepan..."</p>
+                            </div>
+                            <div class="card" style="width: 100%;">
+                                <h3 style="color: var(--warna-aksen-hijau);">Misi</h3>
+                                <ul style="margin-left: 20px; padding: 0;">
+                                    <li>Menyelenggarakan proses belajar mengajar yang inovatif.</li>
+                                    <li>Mengembangkan bakat dan minat siswa...</li>
+                                    <li>Menanamkan nilai-nilai moral, etika, dan spiritual.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <aside class="profil-sidebar">
+                        <img class="kepsek-foto-utama animasi-muncul" src="gambar-sma/kepalasekolahsma8jkt.png"
+                            alt="Kepala Sekolah">
+                        <div class="kepsek-info-teks animasi-muncul">
+                            <h3>Drs. Ubaidillah, M.Pd</h3>
+                            <p class="jabatan">-Kepala SMA Negeri 8 Jakarta-</p>
+                        </div>
+                        <blockquote class="kepsek-kutipan-baru animasi-muncul">
+                            "pendidikan adalah senjata paling ampuh yang bisa kamu gunakan untuk mengubah dunia"
+
+
+                        </blockquote>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="profil-bagian-dua">
+            <div class="container">
+                <h2
+                    style="margin-top: 0; font-size: 1.8rem; color: var(--warna-aksen-hijau); border-bottom: 2px solid var(--warna-aksen-krem); padding-bottom: 10px; margin-bottom: 1rem;">
+                    Akreditasi & Nilai Inti
+                </h2>
+                <p>SMA Negeri 8 Jakarta dengan bangga telah meraih **Akreditasi "A" (Unggul)** dari Badan Akreditasi
+                    Nasional Sekolah/Madrasah (BAN-S/M) sebagai bukti komitmen kami terhadap kualitas pendidikan.</p>
+                <p>Nilai-nilai inti kami adalah: Cerdas, Tangguh, Peduli.</p>
+            </div>
+        </section>
+
+
+        <section class="profil-bagian-tiga">
+            <div class="container">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Kenali kami lebih dekat melalui video profil
+                    singkat
+                    SMA Negeri 8 Jakarta.</h3>
+
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Ueb-XPqAzRE?si=WK2E5-GcMPJrULlX"
+                        title="Video Profil SMA Negeri 8 Jakarta" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2025 SMA Negeri 8 Jakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // 1. Buat observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+            {
+                // Animasi berjalan saat 40% elemen terlihat
+                threshold: 0.4
+            });
+
+        // 2. Pilih semua elemen di sidebar dan suruh observer mengamatinya
+        const elemenSidebar = document.querySelectorAll(
+            '.profil-sidebar .kepsek-foto-utama, .profil-sidebar .kepsek-info-teks, .profil-sidebar .kepsek-kutipan-baru'
+        );
+        elemenSidebar.forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>

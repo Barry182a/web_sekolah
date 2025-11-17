@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekstrakurikuler | SMA Negeri 8 Jakarta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="halaman-ekskul">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="gambar-sma/logo-sma8jkt.png" alt="Logo SMAN 8 Jakarta">
+                    <span class="nama-sekolah-header">SMAN 8 Jakarta</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="jurusan.html">Jurusan</a></li>
+                    <li><a href="ekstrakurikuler.html" class="active">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Ekstrakurikuler</h1>
+            <p style="text-align: center; margin-bottom: 2rem;">Wadah pengembangan bakat, minat, dan kepemimpinan siswa.
+            </p>
+
+            <div class="card-container">
+
+                <div class="card-latar-gambar animasi-muncul">
+                    <h3>OSIS & MPK</h3>
+                    <p>Organisasi Siswa Intra Sekolah dan Majelis Perwakilan Kelas sebagai wadah kepemimpinan.</p>
+                </div>
+
+                <div class="card-latar-gambar animasi-muncul">
+                    <h3>Olahraga</h3>
+                    <p>Meliputi Futsal, Basket, Bulu Tangkis, dan Voli. Melatih sportivitas dan kesehatan jasmani.</p>
+                </div>
+
+                <div class="card-latar-gambar animasi-muncul">
+                    <h3>Seni & Budaya</h3>
+                    <p>Mencakup Tari Tradisional, Paduan Suara, Teater, dan Band. Mengasah kreativitas dan apresiasi
+                        seni.</p>
+                </div>
+
+                <div class="card-latar-gambar animasi-muncul">
+                    <h3>Akademik</h3>
+                    <p>Seperti Klub Debat Bahasa Inggris, Olimpiade Sains (KSN), dan Jurnalistik (Mading).</p>
+                </div>
+
+                <div class="card-latar-gambar animasi-muncul">
+                    <h3>Keagamaan</h3>
+                    <p>Kegiatan Rohani Islam (Rohis) dan Persekutuan Doa (PD) untuk pendalaman iman.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 SMA Negeri 8 Jakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Buat observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+            {
+                threshold: 0.4 // Jalan saat 40% terlihat
+            });
+
+        // 2. PERBAIKANNYA DI SINI:
+        //    Cari SEMUA elemen yang memang kita beri class animasi,
+        //    yaitu '.animasi-muncul'
+        const elemenAnimasi = document.querySelectorAll('.animasi-muncul');
+
+        // 3. Amati semua elemen tersebut
+        elemenAnimasi.forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | SMA NEGERI 8 JAKARTA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="beranda">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="gambar-sma/logo-sma8jkt.png" alt="Logo SMAN 8 Jakarta">
+                    <span class="nama-sekolah-header">SMAN 7 Jakarta</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="jurusan.html">Jurusan</a></li>
+                    <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-slideshow">
+                <div class="slide" style="background-image: url('gambar-sma/sma8jkt3.webp');"></div>
+                <div class="slide" style="background-image: url('gambar-sma/sma8jkt6.jpeg');"></div>
+                <div class="slide" style="background-image: url('gambar-sma/sma8jkt4.png');"></div>
+            </div>
+            <div class="container">
+                <h1 class="page-title">Selamat Datang di SMA Negeri 7 Jakarta</h1>
+                <p style="text-align: center; margin-bottom: 2rem;">
+                    Membentuk Generasi Cerdas, Kreatif, dan Berakhlak Mulia.
+                </p>
+
+                <div class="cta-card-container">
+                    <div class="card-latar-gambar animasi-muncul">
+                        <h3>Profil Sekolah</h3>
+                        <p>Lihat visi, misi, dan sejarah kami untuk mengenal kami lebih baik SMAN 8 Jakarta.</p>
+                        <a href="profil.html" class="card-latar-button">Selengkapnya</a>
+                    </div>
+                    <div class="card-latar-gambar animasi-muncul">
+                        <h3>Info PPDB</h3>
+                        <p>Informasi lengkap pendaftaran peserta didik baru tahun ajaran 2026/2027.</p>
+                        <a href="kontak.html" class="card-latar-button">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sambutan-kepsek">
+            <div class="container">
+                <div class="sambutan-flex">
+
+                    <div class="sambutan-teks animasi-muncul">
+                        <h2>Sambutan Kepala Sekolah</h2>
+                        <p>Selamat datang di website resmi SMA Negeri 8 Jakarta. Kami berkomitmen untuk menyediakan
+                            pendidikan berkualitas yang tidak hanya fokus pada akademik, tetapi juga pada pembentukan
+                            karakter dan akhlak mulia.</p>
+                        <p>Melalui website ini, kami berharap dapat menjalin komunikasi yang lebih baik dengan seluruh
+                            siswa, orang tua, dan masyarakat. Mari bersama-sama kita ciptakan generasi penerus yang
+                            cerdas dan berintegritas.</p>
+
+                        <h4>Drs. Ubaidillah, M.Pd</h4>
+                        <small>Kepala Sekolah</small>
+                    </div>
+
+                    <div class="sambutan-foto animasi-muncul">
+                        <img src="gambar-sma/kepalasekolahsma8jkt.png" alt="Foto Kepala Sekolah SMA Cipta Bangsa">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="berita-terbaru">
+            <div class="container">
+
+                <h2 class="section-title">Berita & Pengumuman Terbaru</h2>
+
+                <div class="card-container">
+
+                    <div class="card animasi-muncul">
+                        <small>28 Oktober 2025</small>
+                        <h3 style="color: var(--warna-aksen-hijau);">Siswa SMAN 8 Jakarta Meraih 4 Medali Emas dan Perak
+                            dalam OSN 2024</h3>
+                    </div>
+
+                    <div class="card animasi-muncul">
+                        <small>25 Oktober 2025</small>
+                        <h3 style="color: var(--warna-aksen-hijau);">Siswi SMAN 8 Jakarta Berhasil Meraih Medali Perak
+                            dalam IBO 2024</h3>
+
+
+                    </div>
+
+                    <div class="card animasi-muncul">
+                        <small>20 Oktober 2025</small>
+                        <h3 style="color: var(--warna-aksen-hijau);">Pengumuman Hasil Seleksi FLS2N Tingkat Sekolah 2024
+                            SMAN 8 Jakarta</h3>
+
+
+                    </div>
+                </div>
+
+                <div class="tombol-semua-berita">
+                    <a href="berita.html">Lihat Semua Berita &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SMA Negeri 8 Jakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+            {
+                threshold: 0.2
+            });const elemenAnimasi = document.querySelectorAll('.animasi-muncul');
+        elemenAnimasi.forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurusan | SMA Negeri 8 Jakarta </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="halaman-jurusan">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="gambar-sma/logo-sma8jkt.png" alt="Logo SMA Cipta Bangsa">
+                    <span class="nama-sekolah-header">SMAN 8 Jakarta</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="jurusan.html" class="active">Jurusan</a></li>
+                    <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Program Jurusan</h1>
+            <p style="text-align: center; margin-bottom: 2rem;">Kami menawarkan program penjurusan yang fokus untuk
+                mempersiapkan siswa ke jenjang perguruan tinggi.</p>
+
+            <div class="card-container">
+
+                <div class="card-gambar-atas animasi-muncul"> <img src="gambar-sma/gambar7.jpg" alt="Jurusan IPA">
+                    <div class="card-caption">
+                        <h3>Ilmu Pengetahuan Alam (IPA)</h3>
+                        <p>Fokus pada Biologi, Fisika, Kimia, dan Matematika Peminatan. Dirancang untuk siswa yang
+                            tertarik pada sains, teknologi, teknik, dan kedokteran.</p>
+                    </div>
+                </div>
+
+                <div class="card-gambar-atas animasi-muncul"> <img src="gambar-sma/jurusan-ips.jpg" alt="Jurusan IPS">
+                    <div class="card-caption">
+                        <h3>Ilmu Pengetahuan Sosial (IPS)</h3>
+                        <p>Fokus pada Ekonomi, Sosiologi, Geografi, dan Sejarah. Ideal untuk siswa yang berminat pada
+                            bidang hukum, manajemen, dan akuntansi.</p>
+                    </div>
+                </div>
+
+                <div class="card-gambar-atas animasi-muncul"> <img src="gambar-sma/jurusan-bahasa.png" alt="Jurusan BAHASA dan BUDAYA">
+                    <div class="card-caption">
+                        <h3>Bahasa dan Budaya</h3>
+                        <p>Fokus pada Sastra Indonesia, Sastra Inggris, Bahasa Asing, dan Antropologi. Cocok untuk yang
+                            menyukai sastra, komunikasi, dan hubungan internasional.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 SMA Negeri 8 Jakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Buat observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+            {
+                threshold: 0.4 // Jalan saat 40% terlihat
+            });
+
+        // 2. PASTIKAN TARGETNYA 'card-gambar-atas'
+        const itemJurusan = document.querySelectorAll('.card-gambar-atas');
+        itemJurusan.forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>

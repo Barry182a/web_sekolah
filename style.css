@@ -1,0 +1,194 @@
+/*
+=================================================
+  BAGIAN 1: PENGATURAN GLOBAL & VARIABEL
+=================================================
+*/
+:root {--warna-dasar: #faf8f7;--warna-aksen-hijau: #f16022;--warna-aksen-krem: #EAE0D5;--warna-putih-netral: #FFFFFF;--warna-teks: #3C3C3C;}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {font-family: Arial, sans-serif;line-height: 1.6;background-color: var(--warna-dasar);color: var(--warna-teks);display: flex;flex-direction: column;min-height: 100vh;}
+main {flex-grow: 1;padding: 2rem 0;}
+footer {background-color: var(--warna-aksen-krem);color: #555;text-align: center;padding: 1.5rem 0;margin-top: auto;}
+.container {max-width: 1000px;margin: 0 auto;padding: 0 20px;}
+
+/*
+=================================================
+  BAGIAN 2: HEADER & NAVIGASI
+=================================================
+*/
+header {background-color: var(--warna-aksen-krem);padding: 1rem 0;border-bottom: 2px solid var(--warna-aksen-krem);position: sticky;top: 0;z-index: 1000;}
+header .container {max-width: 1000px;margin: 0 auto;padding: 0 20px;display: flex;justify-content: space-between;align-items: center;}
+.logo img {height: 60px;width: auto;vertical-align: middle;}
+.logo a {display: flex;align-items: center;gap: 15px;text-decoration: none;}
+.logo .nama-sekolah-header {font-size: 1.5rem;font-weight: bold;color: var(--warna-aksen-hijau);}
+nav ul {list-style-type: none;display: flex;justify-content: center;}
+nav ul li {margin: 0 15px;}
+nav ul li a {text-decoration: none;color: var(--warna-teks);font-weight: bold;padding: 5px 10px;border-radius: 5px;transition: background-color 0.3s ease;}
+nav ul li a.active,
+nav ul li a:hover {background-color: var(--warna-aksen-hijau);color: var(--warna-dasar);}
+
+/*
+=================================================
+  BAGIAN 3: KOMPONEN GENERIK (KARTU, JUDUL, GALERI)
+=================================================
+*/
+.page-title {text-align: center;margin-bottom: 2rem;color: var(--warna-aksen-hijau);border-bottom: 2px solid var(--warna-aksen-krem);padding-bottom: 10px;}
+.section-title {text-align: center;font-size: 2.2rem;color: var(--warna-aksen-hijau);margin-bottom: 2rem;font-weight: bold;}
+.card-container {display: flex;flex-wrap: wrap;gap: 20px;justify-content: center;}
+.card {background-color: #ffffff;border: 1px solid var(--warna-aksen-krem);border-radius: 8px;width: 300px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);padding: 1.5rem;}
+.card h3 {color: var(--warna-aksen-hijau);margin-bottom: 10px;}
+.gallery-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 15px;}
+.gallery-item img {width: 100%;height: 200px;object-fit: cover;border-radius: 8px;border: 2px solid var(--warna-aksen-krem);}
+
+/*
+=================================================
+  BAGIAN 4: STYLE HALAMAN BERANDA (index.html)
+=================================================
+*/
+.hero {position: relative;background-size: cover;background-position: center center;background-repeat: no-repeat;overflow: hidden;padding: 4rem 0;color: white;}
+.hero::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 0;}
+.hero .container {position: relative;z-index: 1;}
+.hero .page-title,.hero .container>p {color: white;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);}
+@keyframes slideGeser {0%,30% {transform: translateX(0%);}33%,63% {transform: translateX(-33.333%);}66%,96% {transform: translateX(-66.666%);}100% {transform: translateX(0%);}}
+.hero-slideshow {position: absolute;top: 0;left: 0;height: 100%;width: 300%;display: flex;z-index: -1;animation-name: slideGeser;animation-duration: 12s;animation-timing-function: ease-in-out;animation-iteration-count: infinite;}
+.slide {width: 33.333%;height: 100%;background-size: cover;background-position: center center;background-repeat: no-repeat;}
+.cta-card-container {display: flex;justify-content: center;gap: 30px;margin-top: 3rem;flex-wrap: wrap;}
+.card-latar-gambar {color: var(--warna-dasar);width: 300px;padding: 2rem;border-radius: 10px;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);position: relative;background-size: cover;background-position: center;overflow: hidden;}
+body#beranda .card-latar-gambar:nth-child(1) {background-image: url('gambar-sma/sma8jkt2.jpeg');}
+body#beranda .card-latar-gambar:nth-child(2) {background-image: url('gambar-sma/gambar5.jpg');}
+.card-latar-gambar::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);z-index: 0;transition: background-color 0.3s ease;}
+.card-latar-gambar h3,.card-latar-gambar p,.card-latar-gambar .card-latar-button {position: relative;z-index: 1;}
+.card-latar-gambar:hover::before {background-color: rgba(0, 0, 0, 0.1);}
+.card-latar-gambar h3 {font-size: 1.5rem;color: var(--warna-aksen-hijau);margin-bottom: 0.5rem;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);}
+.card-latar-gambar p {font-size: 0.95rem;margin-bottom: 1.5rem;}
+.card-latar-button {display: inline-block;text-decoration: none;font-weight: bold;background-color: transparent;border: 2px solid var(--warna-dasar);color: var(--warna-dasar);padding: 10px 20px;border-radius: 5px;transition: all 0.3s ease;}
+.card-latar-button:hover {background-color: var(--warna-dasar);color: var(--warna-aksen-hijau);}
+.sambutan-kepsek {background-color: var(--warna-putih-netral);padding: 4rem 0;color: var(--warna-teks);}
+.sambutan-flex {display: flex;align-items: center;gap: 2.5rem;}
+.sambutan-teks {flex: 2;}
+.sambutan-teks h2 {font-size: 2.2rem;color: var(--warna-aksen-hijau);margin-bottom: 1.5rem;font-weight: bold;}
+.sambutan-teks p {margin-bottom: 1rem;line-height: 1.7;}
+.sambutan-teks h4 {margin-top: 1.5rem;font-style: italic;color: #333;}
+.sambutan-teks small {font-style: italic;}
+.sambutan-foto {flex: 1;text-align: center;}
+.sambutan-foto img {width: 100%;max-width: 350px;height: auto;border-radius: 10px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);border: 5px solid white;}
+.berita-terbaru {background-image: url('gambar-sma/sma8jkt7.png');background-size: cover;background-position: center;background-attachment: scroll;padding: 4rem 0;position: relative;}
+.berita-terbaru::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 0;}
+.berita-terbaru .container {position: relative;z-index: 1;}
+.tombol-semua-berita {text-align: center;margin-top: 2rem;}
+.tombol-semua-berita a {text-decoration: none;font-weight: bold;font-size: 1.1rem;color: var(--warna-aksen-hijau);padding: 10px 20px;border: 2px solid var(--warna-aksen-hijau);border-radius: 5px;transition: all 0.3s ease;}
+.tombol-semua-berita a:hover {background-color: var(--warna-aksen-hijau);color: var(--warna-dasar);}
+
+/*
+=================================================
+  BAGIAN 5: STYLE HALAMAN PROFIL (profil.html)
+=================================================
+*/
+.profil-bagian-satu {background-image: url('gambar-sma/bg-profil.png');padding: 2rem 0 4rem 0;}
+.profil-bagian-dua {background: var(--warna-putih-netral);padding: 4rem 0;}
+.profil-bagian-tiga {background-image: url('gambar-sma/bg-video.png');background-size: cover;background-position: center;padding: 4rem 0;}
+.profil-layout {display: flex;flex-wrap: wrap;gap: 2.5rem;}
+.profil-konten {flex: 2;min-width: 300px;}
+.profil-sidebar {flex: 1;min-width: 280px;text-align: center;}
+.video-wrapper {position: relative;padding-bottom: 56.25%;height: 0;overflow: hidden;max-width: 100%;background: #f0f0f0;border-radius: 10px;}
+.video-wrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.kepsek-foto-utama {width: 100%;max-width: 350px;height: auto;border-radius: 10px;box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);border: 5px solid white;}
+.kepsek-info-teks {margin-top: 1.5rem;}
+.kepsek-info-teks h3 {color: var(--warna-aksen-hijau);margin-bottom: 0.25rem;font-size: 1.3rem;}
+.kepsek-info-teks .jabatan {font-weight: bold;color: #555;font-size: 0.9rem;}
+.kepsek-kutipan-baru {font-style: italic;color: #333;margin-top: 1.5rem;padding: 1.5rem;background-color: var(--warna-dasar);border-radius: 8px;border-left: 5px solid var(--warna-aksen-hijau);text-align: left;}
+
+/*
+=================================================
+  BAGIAN 6: STYLE HALAMAN JURUSAN (jurusan.html)
+=================================================
+*/
+.card-gambar-atas {transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease, transform 0.3s ease;}
+.card-gambar-atas:hover {transform: translateY(-5px);box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);}
+.card-gambar-atas img {width: 100%;height: 200px;object-fit: cover;display: block;}
+.card-caption {padding: 1.5rem;}
+.card-caption h3 {color: var(--warna-aksen-hijau);margin-bottom: 0.75rem;}
+body#halaman-jurusan {background-image: url('gambar-sma/bg-profil.png');background-size: cover;background-position: center center;}
+
+/*
+=================================================
+  BAGIAN 7: STYLE HALAMAN EKSKUL (ekstrakurikuler.html)
+=================================================
+*/
+body#halaman-ekskul {background-image: url('gambar-sma/bg-ekstra.png');background-size: cover;background-position: center center;}
+body#halaman-ekskul .card-latar-gambar:nth-child(1) { background-image: url('gambar-sma/sma-osis.jpg'); }
+body#halaman-ekskul .card-latar-gambar:nth-child(2) { background-image: url('gambar-sma/sma-olahraga.jpg'); }
+body#halaman-ekskul .card-latar-gambar:nth-child(3) { background-image: url('gambar-sma/sma-tari.jpg'); }
+body#halaman-ekskul .card-latar-gambar:nth-child(4) { background-image: url('gambar-sma/sma8jkt8.jpeg'); }
+body#halaman-ekskul .card-latar-gambar:nth-child(5) { background-image: url('gambar-sma/sma8jkt5.jpg'); }
+
+/*
+=================================================
+  BAGIAN 8: STYLE HALAMAN GALERI (galeri.html)
+=================================================
+*/
+body#halaman-galeri {background-image: url('gambar-sma/bg-profil.png');background-size: cover;background-position: center center;}
+
+/*
+=================================================
+  BAGIAN 9: STYLE HALAMAN BERITA (berita.html)
+=================================================
+*/
+body#halaman-berita {background-image: url('gambar-sma/bg-profil.png');background-size: cover;background-position: center center;background-color: transparent;}
+.berita-terbaru .card {background-color: transparent;border: 1px solid var(--warna-putih-netral);position: relative;background-size: cover;background-position: center;overflow: hidden;color: #FFFFFF;opacity: 0;transform: translateY(20px);transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+.berita-terbaru .card.is-visible {opacity: 1;transform: translateY(0);}
+.berita-terbaru .card:nth-child(1) {background-image: url('gambar-sma/sma8jkt8.jpeg');transition-delay: 0.2s;}
+.berita-terbaru .card:nth-child(2) {background-image: url('gambar-sma/sma8jkt9.jpg');transition-delay: 0.4s;}
+.berita-terbaru .card:nth-child(3) {background-image: url('gambar-sma/sma8jkt10.png');transition-delay: 0.6s;}
+.berita-terbaru .card::before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);z-index: 0;transition: background-color 0.3s ease;}
+.berita-terbaru .card>* {position: relative;z-index: 1;}
+.berita-terbaru .card small {color: #dddddd;}
+.berita-terbaru .card h3,.berita-terbaru .card a {color: #FFFFFF !important;text-decoration: none;}
+.berita-terbaru .card a {font-weight: bold;}
+.berita-terbaru .card:hover::before {background-color: rgba(0, 0, 0, 0.1);}
+
+/*
+=================================================
+  BAGIAN 10: STYLE HALAMAN KONTAK (kontak.html)
+=================================================
+*/
+.contact-info {background-color: #fff;padding: 1.5rem;border-radius: 8px;border: 1px solid var(--warna-aksen-krem);}
+
+/*
+=================================================
+  BAGIAN 11: ANIMASI & DELAY
+=================================================
+*/
+.animasi-muncul {opacity: 0;transform: translateY(20px);transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+.animasi-muncul.is-visible {opacity: 1;transform: translateY(0);}
+body#beranda .card-latar-gambar:nth-child(1) { transition-delay: 0.2s; }
+body#beranda .card-latar-gambar:nth-child(2) { transition-delay: 0.4s; }
+.profil-sidebar .kepsek-foto-utama.is-visible {transition-delay: 0.2s;}
+.profil-sidebar .kepsek-info-teks.is-visible {transition-delay: 0.4s;}
+.profil-sidebar .kepsek-kutipan-baru.is-visible {transition-delay: 0.6s;}
+body#halaman-jurusan .card-gambar-atas:nth-child(1) {transition-delay: 0.2s;}
+body#halaman-jurusan .card-gambar-atas:nth-child(2) {transition-delay: 0.3s;}
+body#halaman-jurusan .card-gambar-atas:nth-child(3) {transition-delay: 0.4s;}
+body#halaman-ekskul .card-latar-gambar:nth-child(1) { transition-delay: 0.2s; }
+body#halaman-ekskul .card-latar-gambar:nth-child(2) { transition-delay: 0.3s; }
+body#halaman-ekskul .card-latar-gambar:nth-child(3) { transition-delay: 0.4s; }
+body#halaman-ekskul .card-latar-gambar:nth-child(4) { transition-delay: 0.5s; }
+body#halaman-ekskul .card-latar-gambar:nth-child(5) { transition-delay: 0.6s; }
+.gallery-item:nth-child(1) {transition-delay: 0.1s;}
+.gallery-item:nth-child(2) {transition-delay: 0.2s;}
+.gallery-item:nth-child(3) {transition-delay: 0.3s;}
+.gallery-item:nth-child(4) {transition-delay: 0.1s;}
+.gallery-item:nth-child(5) {transition-delay: 0.2s;}
+.gallery-item:nth-child(6) {transition-delay: 0.3s;}
+.gallery-item:nth-child(7) {transition-delay: 0.1s;}
+.gallery-item:nth-child(8) {transition-delay: 0.2s;}
+.gallery-item:nth-child(9) {transition-delay: 0.3s;}
+body#halaman-berita .card-gambar-atas:nth-child(1) {transition-delay: 0.2s;}
+body#halaman-berita .card-gambar-atas:nth-child(2) {transition-delay: 0.3;}
+body#halaman-berita .card-gambar-atas:nth-child(3) {transition-delay: 0.4s;}
+
+/*
+=================================================
+  BAGIAN 12: RESPONSIVE (MEDIA QUERIES)
+=================================================
+*/
+@media (max-width: 768px) {header .container {flex-direction: column;gap: 15px;}nav ul {flex-direction: column;width: 100%;text-align: center;}nav ul li {margin: 5px 0;} .sambutan-flex {flex-direction: column;} .profil-layout {flex-direction: column;} .page-title, .section-title {font-size: 1.8rem;} .sambutan-teks h2 {font-size: 1.8rem;} .card, .card-gambar-atas, .card-latar-gambar {width: 100%;}}

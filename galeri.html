@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri | SMA Negeri 8 Jakarta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="halaman-galeri">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="gambar-sma/logo-sma8jkt.png" alt="Logo SMAN 8 Jakarta">
+                    <span class="nama-sekolah-header">SMAN 8 Jakarta</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="jurusan.html">Jurusan</a></li>
+                    <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Galeri Kegiatan</h1>
+            <p style="text-align: center; margin-bottom: 2rem;">Momen dan kenangan dari berbagai aktivitas di sekolah
+                kami.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-upacara.jpg" alt="Kegiatan Upacara">
+                </div>
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-pentasseni.jpg" alt="Kegiatan Basket">
+                </div>
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-lab.jpg" alt="Kegiatan Lab">
+                </div>
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-pentasseni.jpg" alt="Kegiatan Pentas Seni">
+                </div>
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-studytour.jpg" alt="Kegiatan Study Tour">
+                </div>
+                <div class="gallery-item animasi-muncul">
+                    <img src="gambar-sma/sma-kelulusan.jpg" alt="Kegiatan Kelulusan">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SMA Negeri 8 Jakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // 1. Buat observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+            {
+                // Atur threshold lebih kecil untuk galeri 
+                // agar animasi berjalan lebih cepat
+                threshold: 0.1
+            });
+
+        // 2. Pilih semua item galeri dan amati
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
+
+</body>
+
+</html>
